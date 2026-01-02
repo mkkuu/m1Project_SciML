@@ -23,7 +23,6 @@
           certifi
           lxml
           ipykernel
-          copernicusmarine
           xarray
           netcdf4
           scipy
