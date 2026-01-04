@@ -35,6 +35,10 @@
           shellHook = ''
             export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
             export REQUESTS_CA_BUNDLE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
+
+            if ! jupyter kernelspec list | grep -q "m1Project"; then
+              python -m ipykernel install --user --name m1Project --display-name "Python m1Project"
+            fi
           '';
         };
       });
