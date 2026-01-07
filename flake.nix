@@ -10,6 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+
         pythonEnv = pkgs.python312.withPackages (ps: with ps; [
           numpy
           pandas
@@ -33,14 +34,23 @@
         ]);
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = [ pythonEnv ];
+          buildInputs = [
+            pythonEnv
+            pkgs.julia-bin
+          ];
+
           shellHook = ''
             export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
             export REQUESTS_CA_BUNDLE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
 
+            # Kernel Python (OK)
             if ! jupyter kernelspec list | grep -q "m1Project"; then
-              python -m ipykernel install --user --name m1Project --display-name "Python m1Project"
+              python -m ipykernel install --user \
+                --name m1Project \
+                --display-name "Python m1Project"
             fi
+
+            echo "Julia available. Run Julia once to install IJulia."
           '';
         };
       });
