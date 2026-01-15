@@ -19,19 +19,32 @@ Tâches majeures :
 ## Structure du projet
 
 .
-├── data/
+├── data/ 
+
 |   ├── features/ 
+
 │   ├── raw/
+
 │   └── processed/
+
 ├── docs/
+
 ├── notebooks/
+
 │   ├── dataPreparation/
+
 │   ├── statisticalAnalysis/
+
 │   ├── preTreatment/
+
 │   └── sciML/
+
 ├── src/
+
 ├── results/
+
 └── README.md
+
 
 ## Résultats principaux
 
