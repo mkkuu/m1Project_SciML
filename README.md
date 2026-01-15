@@ -4,7 +4,13 @@
 
 L'objectif primaire du projet est de réussir à capter la dynamique des SST dans la zone maritime de la Manche via des modèles ODE de Scientific Machine Learning pour de la prédiction améliorée. 
 
-Le résultat final serait une interface *scientific-oriented*, présentant le fruit de nos analyses sur les différentes phases : préparation des données, analyse statistique, pré-traitement et application du SciML. Un travail continu d'amélioration de la précision du modèle prédictif serait maintenu jusqu'à obtention de résultats satisfaisant. Nous mettrions l'accent sur l'esthétique de l'interface pour présenter le sujet de manière attractive et résumée.
+Le résultat final serait une interface *scientific-oriented*, présentant le fruit de nos analyses sur les différentes phases : 
+- Préparation des données
+- Analyse statistique 
+- Pré-traitement
+- Application du SciML 
+
+Un travail continu d'amélioration de la précision du modèle prédictif serait maintenu jusqu'à obtention de résultats satisfaisant. Nous mettrions l'accent sur l'esthétique de l'interface pour présenter le sujet de manière attractive et résumée.
 
 Tâches majeures :
 - Extraire et préparer une série spatio-temporelle de SST sur une zone géographique restreinte
@@ -22,8 +28,8 @@ Tâches majeures :
 
 ## Dépendances & environnement
 
--> Python version used : 3.12.12
--> Julia Version used : 1.12.3
+- Python version used : 3.12.12
+- Julia Version used : 1.12.3
 
 ## État du projet
 
