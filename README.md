@@ -16,36 +16,6 @@ Tâches majeures :
 
 À compléter
 
-## Structure du projet
-
-.
-├── data/ 
-
-|   ├── features/ 
-
-│   ├── raw/
-
-│   └── processed/
-
-├── docs/
-
-├── notebooks/
-
-│   ├── dataPreparation/
-
-│   ├── statisticalAnalysis/
-
-│   ├── preTreatment/
-
-│   └── sciML/
-
-├── src/
-
-├── results/
-
-└── README.md
-
-
 ## Résultats principaux
 
 À compléter
