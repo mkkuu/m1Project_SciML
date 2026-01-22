@@ -1,0 +1,179 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[acronym]{glossaries}
+\usepackage{subcaption}
+
+
+% Mise en Page
+\geometry{margin=2.5cm}
+
+% Graphs et Schémas
+\usetikzlibrary{arrows.meta,positioning}
+
+% Glossaire
+\makeglossaries
+
+% Fichier avec définitions
+\input{glossaire}
+
+% ======== INFOS DOC ========
+\title{Compendium océanographique pour l'analyse de la SST en Manche (2010--2020)}
+\author{DELAUNAY Robin, HENRY Williams}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% ======== PART 1 : INTRO ========
+\section{Introduction}
+
+Ce document document a pour but de rassembler des éléments de contexte océanographique,
+ les principaux phénomènes climatiques et les définitions des termes techniques utilisés
+ dans le cadre du projet de prédiction de la température à la surface de la Manche sur la
+ période 2010--2020.
+
+ Il complète le rapport en apportant :
+ \begin{itemize}
+    \item une mise en contexte régionale de la Manche
+    \item une frise chronologique qualitative de l'évolution de la SST sur 2010--2020
+    \item un focus sur la rupture temporelle détectée autour de 2014
+    \item un glossaire des termes océanographiques et statistiques mobilisé avec des
+    schémas simples.
+ \end{itemize}
+
+ % ======== 2.Contexte régionale ========
+
+ \section{Contexte océanographique de la Manche}
+
+ \subsection{Cadre géographique et caractéristiques générales}
+ \begin{figure}[ht]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[height=6cm]{referenceMap.png}
+    \caption{Carte de contexte géographique de la Manche.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[height=6cm]{mapTemporalDeviations.png}
+    \caption{Écart-type temporel de la SST (2010--2020).}
+  \end{subfigure}
+  \caption{Comparaison entre la carte de contexte géographique et la carte de
+  variabilité temporelle de la SST en Manche.}
+\end{figure}
+
+
+\subsection{Rôle climatique et dynamique générale}
+
+
+ % ======== 3.Frise Chronologique ========
+ \section{Evolution qualitative de la SST en Manche (2010--2020)}
+
+ Cette section propose une frise chronologique qualitative de l'évolution
+ de la SST en Manche sur la période 2010--2020. Il s'agit d'un schéma conceptuel
+ destiné à résumer les grands types de régimes thermiques identifiés dans le projet
+ (périodes proches de la climatologie, régime plus chaud, etc...).
+
+ \begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[
+    timeline/.style={thick},
+    tick/.style={thin},
+    event/.style={circle, fill=black, inner sep=1.2pt},
+    label/.style={font=\small, align=center}
+  ]
+
+    % Ligne de temps principale
+    \draw[timeline] (0,0) -- (10,0);
+    
+    % Repères annuels (1 unité = 1 an)
+    \foreach \x/\year in {
+      0/2010,1/2011,2/2012,3/2013,4/2014,
+      5/2015,6/2016,7/2017,8/2018,9/2019,10/2020} {
+      \draw[tick] (\x,0.1) -- (\x,-0.1)
+        node[below=2pt,font=\scriptsize] {\year};
+    }
+
+    \node[event] (e2010) at (0,0) {};
+    \node[label,above=4pt of e2010] {ENSO\\froide};
+
+    \node[event] (e2014) at (4,0) {};
+    \node[label,above=4pt of e2014] {Rupture\\temporelle};
+    
+  
+    \draw[thick] (5,0.25) -- (6,0.25);
+    \node[label,above=4pt] at (6.5,0.25) {El Niño\\plus important};
+
+    
+    \draw[thick] (1,-0.25) -- (2,-0.25);
+    \node[label,below=4pt] at (1.5,-0.25) {Etat thermique bas};
+
+    \draw[thick] (5,-0.25) -- (10,-0.25);
+    \node[label,below=4pt] at (7.5,-0.25) {Etat thermique haut};
+
+  \end{tikzpicture}
+  \caption{Frise chronologique qualitative de l'évolution de la SST en Manche sur la période 2010--2020.}
+  \label{fig:frise-2010-2020}
+\end{figure}
+
+% ======== 4.Rupture temporelle de 2014 ========
+
+\section{Rupture temporelle détectée autour de 2014}
+
+Dans cette section, on décrit la rupture temporelle détectée autour de 2014 dans la série de SST dans la Manche.
+La rupture temporelle détectée en 2014 marque un changement de régime thermique du système océan–atmosphère. 
+Avant 2014, la dynamique est dominée par des forçages climatiques froids, notamment un ENSO froid et plusieurs 
+phases de NAO négative, entraînant des pertes énergétiques hivernales suffisantes pour limiter le réchauffement 
+de surface. Malgré cela, un réchauffement de fond progressif est déjà présent, traduisant l’accumulation lente 
+de chaleur dans l’océan.
+
+À partir de 2014, ce réchauffement de fond élève le plancher thermique moyen du système. 
+Les mécanismes atmosphériques, bien que toujours actifs, ne produisent plus des anomalies 
+froides suffisantes pour compenser les gains énergétiques. Le système bascule alors vers un 
+nouvel état d’équilibre caractérisé par une SST moyenne plus élevée. Cette transition est 
+cohérente avec l’augmentation observée des moyennes et des quantiles de température après 
+2014, confirmant un changement de régime plutôt qu’une simple fluctuation interannuelle.
+% ======== 5.Glossaire des temps et phénomènes ========
+
+\section{GLossaire des termes et phénomènes}
+
+Le glossaire suivant rassemble les acronymes et les termes techniques utilisés dans ce Compendium
+et dans le rapport principal.
+
+\subsection{Liste des acronymes}
+
+\printglossary[type=\acronymtype,title={Liste des acronymes}]
+\gls{sst}
+\gls{nao}
+\gls{enso}
+\gls{en}
+\gls{ln}
+\gls{oa}
+\gls{vi}
+
+\subsection{Glossaire des termes}
+
+\printglossary[title={Glossaire des termes océanographiques et statistiques}]
+\gls{climatologie}
+\gls{north atlantic oscillation}
+\gls{el niño-southern oscillation}
+\gls{stratification}
+\gls{refroidissement atmosphérique}
+\gls{mélange vertical}
+\gls{forçages atmosphériques}
+
+\end{document}
+
+
