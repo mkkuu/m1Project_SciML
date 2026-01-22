@@ -106,20 +106,25 @@ Ce document document a pour but de rassembler des éléments de contexte océano
         node[below=2pt,font=\scriptsize] {\year};
     }
 
-    % Exemple d'événement : rupture temporelle autour de 2014
+    \node[event] (e2010) at (0,0) {};
+    \node[label,above=4pt of e2010] {ENSO\\froide};
+
     \node[event] (e2014) at (4,0) {};
     \node[label,above=4pt of e2014] {Rupture\\temporelle};
+    
+  
+    \draw[thick] (5,0.25) -- (6,0.25);
+    \node[label,above=4pt] at (6.5,0.25) {El Niño\\plus important};
 
-    % Exemple de période plus chaude après 2014 (à adapter)
-    \draw[thick] (4.2,0.25) -- (8.8,0.25);
-    \node[label,above=4pt] at (6.5,0.25) {Régime thermique\\plus chaud};
+    
+    \draw[thick] (1,-0.25) -- (2,-0.25);
+    \node[label,below=4pt] at (1.5,-0.25) {Etat thermique bas};
 
-    % Exemple de période proche de la climatologie avant 2013 (à adapter)
-    \draw[thick] (0.2,-0.25) -- (2.8,-0.25);
-    \node[label,below=4pt] at (1.5,-0.25) {SST proche\\de la climatologie};
+    \draw[thick] (5,-0.25) -- (10,-0.25);
+    \node[label,below=4pt] at (7.5,-0.25) {Etat thermique haut};
 
   \end{tikzpicture}
-  \caption{Frise chronologique qualitative de l'évolution de la SST en Manche sur la période 2010--2020 (schéma conceptuel à adapter en fonction des résultats).}
+  \caption{Frise chronologique qualitative de l'évolution de la SST en Manche sur la période 2010--2020.}
   \label{fig:frise-2010-2020}
 \end{figure}
 
@@ -128,7 +133,18 @@ Ce document document a pour but de rassembler des éléments de contexte océano
 \section{Rupture temporelle détectée autour de 2014}
 
 Dans cette section, on décrit la rupture temporelle détectée autour de 2014 dans la série de SST dans la Manche.
+La rupture temporelle détectée en 2014 marque un changement de régime thermique du système océan–atmosphère. 
+Avant 2014, la dynamique est dominée par des forçages climatiques froids, notamment un ENSO froid et plusieurs 
+phases de NAO négative, entraînant des pertes énergétiques hivernales suffisantes pour limiter le réchauffement 
+de surface. Malgré cela, un réchauffement de fond progressif est déjà présent, traduisant l’accumulation lente 
+de chaleur dans l’océan.
 
+À partir de 2014, ce réchauffement de fond élève le plancher thermique moyen du système. 
+Les mécanismes atmosphériques, bien que toujours actifs, ne produisent plus des anomalies 
+froides suffisantes pour compenser les gains énergétiques. Le système bascule alors vers un 
+nouvel état d’équilibre caractérisé par une SST moyenne plus élevée. Cette transition est 
+cohérente avec l’augmentation observée des moyennes et des quantiles de température après 
+2014, confirmant un changement de régime plutôt qu’une simple fluctuation interannuelle.
 % ======== 5.Glossaire des temps et phénomènes ========
 
 \section{GLossaire des termes et phénomènes}
@@ -139,11 +155,25 @@ et dans le rapport principal.
 \subsection{Liste des acronymes}
 
 \printglossary[type=\acronymtype,title={Liste des acronymes}]
-\gls{sst} BLABLABLA
+\gls{sst}
+\gls{nao}
+\gls{enso}
+\gls{en}
+\gls{ln}
+\gls{oa}
+\gls{vi}
+
 \subsection{Glossaire des termes}
 
 \printglossary[title={Glossaire des termes océanographiques et statistiques}]
 \gls{climatologie}
+\gls{north atlantic oscillation}
+\gls{el niño-southern oscillation}
+\gls{stratification}
+\gls{refroidissement atmosphérique}
+\gls{mélange vertical}
+\gls{forçages atmosphériques}
+
 \end{document}
 
 

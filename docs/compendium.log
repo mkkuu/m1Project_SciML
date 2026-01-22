@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.19)  21 JAN 2026 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.19)  22 JAN 2026 02:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1104,7 +1104,13 @@ Overfull \hbox (137.227pt too wide) in paragraph at lines 70--71
  []
 
 [2 <./referenceMap.png> <./mapTemporalDeviations.png>] (compendium.acr)
-(compendium.gls) [3] (compendium.aux)
+(compendium.gls
+Overfull \hbox (0.29852pt too wide) in paragraph at lines 8--8
+[]\T1/lmr/m/n/10.95 Oscillation cli-ma-tique cou-plée océan^^Uatmosphère dans l
+e Pa-
+ []
+
+[3]) [4] (compendium.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
@@ -1113,13 +1119,13 @@ Package rerunfilecheck Info: File `compendium.out' has not changed.
 (rerunfilecheck)             Checksum: EEB62B65797C99D27571911F4A92445A;2094.
  ) 
 Here is how much of TeX's memory you used:
- 31425 strings out of 467871
- 629644 string characters out of 5418376
- 1064197 words of memory out of 5000000
- 59814 multiletter control sequences out of 15000+600000
+ 31805 strings out of 467871
+ 638751 string characters out of 5418376
+ 1074272 words of memory out of 5000000
+ 60181 multiletter control sequences out of 15000+600000
  673191 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,131p,2503b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,131p,2503b,786s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
 b><C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.p
@@ -1127,9 +1133,9 @@ fb><C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pf
 b><C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 ><C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
 <C:/Users/gaoks/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb>
-Output written on compendium.pdf (3 pages, 347112 bytes).
+Output written on compendium.pdf (4 pages, 360528 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
