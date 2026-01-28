@@ -29,7 +29,7 @@ Tâches majeures :
 ## Dépendances & environnement
 
 - Python version used : 3.12.12
-- Julia Version used : 1.12.3
+- Julia Version used : 1.11a
 
 ## État du projet
 
