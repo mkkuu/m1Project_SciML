@@ -1,6 +1,16 @@
 using NPZ
 using OrdinaryDiffEq
+using DiffEqFlux
+using Lux
+using Random
+using Optimisers
+using Zygote
+using DifferentialEquations
 using Flux
+using Statistics
+using ProgressMeter
+using ComponentArrays
+
 
 # We open the reduced state previously prepared in Python
 reducedState = npzread("data/processed/sstReducedStateCOPERNICUS20102019Prepared.npz")
@@ -43,8 +53,68 @@ zTrain, zTest = PCs[1:Int32.(round(ratioTrain*spanT)), :], PCs[Int32.(round(rati
 # println(size(zTrain))
 # println(size(zTest))
 
+zTrain = Float32.(zTrain)
+zTest  = Float32.(zTest)
+
 # Now we can start to set the NN and its parameters
-z0 = zTrain[1]
+z0 = Float32.(zTrain[1, :])
+tSpan = (0, Int32.(round(ratioTrain*spanT)))
+nMods = size(zTrain)[2]
+# println(z0)
+# println(tSpan)
+println(nMods)
+
+# We follow the exemplage of Lux.jl to construct a NN layer
+rng = Xoshiro(0)
+
+dZdT = Lux.Chain(
+    Lux.Dense(nMods, 64, tanh),
+    Lux.Dense(64, nMods)
+)
+
+ps, st = Lux.setup(rng, dZdT)
+ps = ComponentArray(ps)
+
+
+tspan = (0f0, Float32.(spanT - 1))
+
+NODE = NeuralODE(
+    dZdT,
+    tspan,
+    Tsit5(),
+    saveat = 1f0
+)
+
+function predictNODE(z0, ps, st)
+    sol, _ = NODE(z0, ps, st)
+    Array(sol)
+end
+
+function lossNODE(ps)
+    pred = predictNODE(z0, ps, st)
+    return mean((pred .- zTrain').^2)
+end
+
+# To review (on how an optimiser really works)
+opt = Optimisers.Adam(1e-3)
+optState = Optimisers.setup(opt, ps)
+
+function train!(ps, st, optState; nEpochs=200)
+    @showprogress for epoch in 1:nEpochs
+        loss, back = Zygote.pullback(lossNODE, ps)
+        grads = back(1f0)[1]
+        optState, ps = Optimisers.update(optState, ps, grads)
+
+        epoch % 10 == 0 && println("Epoch $epoch | Loss = $loss")
+    end
+    return ps, optState
+end
+
+ps, optState = train!(ps, st, optState)
+
+
+
+
 
 
 
